@@ -1,3 +1,4 @@
+# https://thepythoncode.com/article/building-crud-app-with-flask-and-sqlalchemy?utm_content=cmp-true
 # pip install flask flask-sqlalchemy PyMySQL
 # SET DEV_DATABASE_URL=postgresql://myuser:mypassword@localhost:5056/mydatabase
 # SET FLASK_APP=bookshop.py
