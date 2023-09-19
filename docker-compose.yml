@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+    ports:
+      - "5056:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  flask_app:
+    build: ./flask_app
+    ports:
+      - "5050:5000"
+    depends_on:
+      - postgres  # Make the Flask app depend on the PostgreSQL service
+    environment:
+      DATABASE_URL: postgres://myuser:mypassword@postgres:5432/mydatabase
+    command: ["python", "initialize_db.py"]
+
+volumes:
+  postgres_data:

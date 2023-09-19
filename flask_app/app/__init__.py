@@ -11,6 +11,10 @@
 # db.session.add(book2)
 # db.session.commit()
 
+# docker-compose build
+# docker-compose up -d postgres
+# docker-compose up -d flask_app
+
 
 # SET FLASK_APP=bookshop.py
 # flask run
