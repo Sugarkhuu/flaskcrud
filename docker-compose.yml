@@ -15,12 +15,12 @@ services:
   flask_app:
     build: ./flask_app
     ports:
-      - "5050:5000"
+      - "6011:5000"
     depends_on:
       - postgres  # Make the Flask app depend on the PostgreSQL service
-    environment:
-      DATABASE_URL: postgres://myuser:mypassword@postgres:5432/mydatabase
-    command: ["python", "initialize_db.py"]
+    # environment:
+    #   DATABASE_URL: postgres://myuser:mypassword@postgres:5432/mydatabase
+    # command: ["python", "initialize_db.py"]
 
 volumes:
   postgres_data:

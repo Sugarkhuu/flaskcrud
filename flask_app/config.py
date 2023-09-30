@@ -10,18 +10,18 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = "postgresql://myuser:mypassword@localhost:5056/mydatabase" #os.getenv("DEV_DATABASE_URL")
+    SQLALCHEMY_DATABASE_URI = "postgresql://myuser:mypassword@postgres:5432/mydatabase" #os.getenv("DEV_DATABASE_URL")
 
-class TestingConfig(Config):
-    TESTING = True
-    SQLALCHEMY_DATABASE_URI = os.getenv("TEST_DATABASE_URL")
+# class TestingConfig(Config):
+#     TESTING = True
+#     SQLALCHEMY_DATABASE_URI = os.getenv("TEST_DATABASE_URL")
 
-class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
+# class ProductionConfig(Config):
+#     SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
 
 config = {
-    "development": DevelopmentConfig,
-    "testing": TestingConfig,
-    "production": ProductionConfig,
+    # "development": DevelopmentConfig,
+    # "testing": TestingConfig,
+    # "production": ProductionConfig,
     "default": DevelopmentConfig
 }
